@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhGiaiThua(a) {
+        let result = 1;
+        let i = 1;
+        while (i <= a) {
+            result *= i;
+            i++
+        }
+        return result;
+    }
+
+    let input = parseInt(prompt('Nhập số'));
+    if (input >= 0) {
+        alert('giai thừa của ' + input + '= ' + tinhGiaiThua(input));
+    } else {
+        alert('Nhập sai');
+    }
+</script>
+</body>
+</html>

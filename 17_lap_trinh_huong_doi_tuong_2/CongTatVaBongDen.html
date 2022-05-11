@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="on()">Bật</button>
+<button type="button" onclick="off()">Tắt</button>
+<button type="button" onclick="connection()">Kết nối</button>
+<script>
+    class Lamp {
+        constructor() {
+            this.status = false;
+        }
+
+        turnOn = function () {
+            if (this.status) {
+                alert("đen đang tắt ")
+            } else {
+                alert("đèn đã được bật!");
+                this.status = true;
+            }
+        };
+        turnOff = function () {
+            if (this.status) {
+                alert("đèn đã được tắt!");
+                this.status = false
+            } else {
+                alert("đèn đang sáng");
+
+            }
+        };
+    }
+
+    class switchButton {
+        constructor() {
+            this.lamp = {};
+        }
+
+        conectToLamp(obj) {
+            this.lamp = obj;
+            this.status = true;
+        };
+
+        turnOff() {
+            if (this.status) {
+                this.lamp.turnOff();
+
+            }
+        };
+
+        turnOn() {
+            if (this.status) {
+                this.lamp.turnOn();
+            }
+        }
+    }
+
+
+    let sonySwitcher = new switchButton();
+    let sonyLamp = new Lamp();
+
+    function connection() {
+        sonySwitcher.conectToLamp(sonyLamp);
+    }
+
+    function on() {
+        sonySwitcher.turnOn();
+    }
+
+    function off() {
+        sonySwitcher.turnOff();
+    }
+</script>
+</body>
+</html>
